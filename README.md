@@ -1,49 +1,36 @@
-# 🔐 Password Security Tool
-
-![GitHub](https://img.shields.io/github/license/sandu04/password-security-tool)
-![Docker Image](https://img.shields.io/docker/image-size/sandu04/password-tool/latest)
-![Docker Pulls](https://img.shields.io/docker/pulls/sandu04/password-tool)
-
-**Run with one command:**
-```bash
-docker run --rm sandu04/password-tool --help
-
-## 🐳 Quick Run with Docker
-
-### One-command run:
-```bash
-docker run --rm yourusername/password-tool --length 16 --upper --numbers --special
-
-# Password Security Tool
+Password Security Tool
+Docker tool for generating strong passwords and analyzing password security.
 
 # Generate password
-docker run --rm yourusername/password-tool --length 20
+docker run --rm sandu04/password-tool --length 16 --upper --numbers --special
 
 # Analyze password
-docker run --rm yourusername/password-tool --check "password123" --show
+docker run --rm sandu04/password-tool --check "password123" --show
 
-# Help
-docker run --rm yourusername/password-tool --help
+Features:
+-Generate secure passwords with customizable criteria
+-Analyze password strength (entropy-based)
+-Test against common password lists
+-Generate memorable passwords
+-Encrypted history storage
+-Docker support - runs anywhere
 
-A secure password generator and analyzer tool with strong encryption features.
+Docker Commands:
 
-## Features
-- Generate strong passwords with configurable criteria
-- Analyze existing password strength (entropy-based)
-- Batch password generation
-- Test against common password lists (top 1000)
-- Encrypted history storage (Base64)
-- Memorable password generation (with words)
-- Password improvement suggestions
+# Basic usage
+docker run --rm sandu04/password-tool --help
 
-## Installation
-```bash
-# Clone repository
-git clone https://github.com/yourusername/password-security-tool.git
+# Examples
+docker run --rm sandu04/password-tool --length 20
+docker run --rm sandu04/password-tool --memorable --words 3
+docker run --rm sandu04/password-tool --batch 5 --length 12
+
+ Links
+-GitHub: https://github.com/Sandu04/password-security-tool
+-Docker Hub: https://hub.docker.com/r/sandu04/password-tool
+
+Source Code
+For local execution:
+git clone https://github.com/Sandu04/password-security-tool.git
 cd password-security-tool
-
-# Make script executable
-chmod +x password_gen.py
-
-# Create common passwords file
-python3 create_common_passwords.py
+python3 password_gen.py --help
